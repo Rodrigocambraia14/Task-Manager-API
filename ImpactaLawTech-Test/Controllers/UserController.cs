@@ -9,7 +9,6 @@ namespace ImpactaLawTech_Test.Controllers
     [Route("api/[controller]")]
     [Produces("application/json")]
     [ApiController]
-    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IMediator mediator;
@@ -19,12 +18,14 @@ namespace ImpactaLawTech_Test.Controllers
             this.mediator = mediator;
         }
 
+        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterUserCommand command)
         {
             return Created(string.Empty, await this.mediator.Send(command));
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginUserCommand command)
         {

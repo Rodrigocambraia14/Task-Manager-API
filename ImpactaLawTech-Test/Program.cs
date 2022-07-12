@@ -62,7 +62,7 @@ async Task<IApplicationBuilder> LoadSeeds(IApplicationBuilder app)
     var userManager = (UserManager<User>)ActivatorUtilities.CreateInstance(services, typeof(UserManager<User>), userStore);
 
     InitialSeed.SeedRoles(context);
-    InitialSeed.SeedUsers(context, userManager);
+    //InitialSeed.SeedUsers(context, userManager);
 
     return app;
 }
@@ -103,7 +103,7 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllers();
 });
 
-// LoadSeeds(app).GetAwaiter().GetResult();
+ LoadSeeds(app).GetAwaiter().GetResult();
 
 app.UseHttpsRedirection();
 

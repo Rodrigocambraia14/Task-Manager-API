@@ -40,10 +40,15 @@ namespace LawTech.Application.Models.Commands.Users.Login
 
             if (login.Succeeded)
             {
+                var role = await this.defaultContext.Roles.Where(x => x.Id == user.UserRoles.First().RoleId)
+                                                          .FirstOrDefaultAsync(cancellationToken: cancellationToken);
+
+                user.UserRoles.First().Role = role!;
+
                 UserLogin userLogin = new()
                 {
                     LoginProvider = "Default",
-                    
+                    ProviderKey = user.Email + DateTime.Now.ToString(),
                     CreatedDate = DateTime.Now,
                     Token = BuildToken(user.Email),
                     ExpirationDate = DateTime.Now.AddHours(double.Parse(this.options.GetSection("TokenSettings:ExpiresInHours").Value)),

@@ -17,7 +17,7 @@ namespace LawTech.Application.Models.Commands.Users.Register
 
         public string Name { get; set; }
 
-        public UserType UserType { get; set; }
+        public UserType UserType { get; set; } = UserType.User;
 
         public string Password { get; set; }
     }

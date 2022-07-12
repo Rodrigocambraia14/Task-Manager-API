@@ -21,6 +21,18 @@ namespace ImpactaLawTech_Test.Seeds
 
                 defaultContext.SaveChanges();
             }
+            if (!defaultContext.Roles.Where(x => x.Name == "Usuario").Any())
+            {
+                defaultContext.Roles.Add(new Role()
+                {
+                    CreatedDate = DateTime.Now,
+                    Name = "Usuario",
+                    NormalizedName = "USUARIO",
+                    Description = "Grupo de usuarios"
+                });
+
+                defaultContext.SaveChanges();
+            }
         }
 
         public static void SeedUsers(DefaultContext defaultContext, UserManager<User> userManager)
