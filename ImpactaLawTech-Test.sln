@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImpactaLawTech-Test", "ImpactaLawTech-Test\ImpactaLawTech-Test.csproj", "{2D173CAD-24CD-4A43-A136-A25A5FB4F08F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Presentation", "1-Presentation", "{8212EE44-D27F-48E2-AD9E-BB562AA01B7C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Application", "2-Application", "{E02ADFB3-6BD7-4421-9F69-476D22F33917}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{9C96F5F4-0ACA-4CAB-A98A-27B1C52ACEDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawTech.Application", "LawTech.Application\LawTech.Application.csproj", "{8609E7D3-B348-4736-B7B0-3CF6D6358A9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawTech.Context.Default", "LawTech.Context.Default\LawTech.Context.Default.csproj", "{55D040ED-443E-4167-BCA0-00F55329842A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Infra", "4-Infra", "{86C8A471-22A8-4D14-BC3E-FA9612386D9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-CrossCutting", "5-CrossCutting", "{02F58C4A-EAC7-4C32-B023-FAF575E32551}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawTech.Infra.Context.Persistence", "LawTech.Infra.Context.Persistence\LawTech.Infra.Context.Persistence.csproj", "{7AF1D938-D98E-4AAA-8B66-B89F0821477B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawTech.Infra.Ioc", "LawTech.Infra.Ioc\LawTech.Infra.Ioc.csproj", "{FCB9E539-D1B7-47AD-897D-6405EC8AA451}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawTech.Infra.Services", "LawTech.Infra.Services\LawTech.Infra.Services.csproj", "{3234FEF0-5914-4A29-BA26-0EC44B731F13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawTech.CrossCutting", "LawTech.CrossCutting\LawTech.CrossCutting.csproj", "{DD9C91E6-EA16-4386-B4D3-F53D2E492771}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D173CAD-24CD-4A43-A136-A25A5FB4F08F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D173CAD-24CD-4A43-A136-A25A5FB4F08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D173CAD-24CD-4A43-A136-A25A5FB4F08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D173CAD-24CD-4A43-A136-A25A5FB4F08F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8609E7D3-B348-4736-B7B0-3CF6D6358A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8609E7D3-B348-4736-B7B0-3CF6D6358A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8609E7D3-B348-4736-B7B0-3CF6D6358A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8609E7D3-B348-4736-B7B0-3CF6D6358A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55D040ED-443E-4167-BCA0-00F55329842A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55D040ED-443E-4167-BCA0-00F55329842A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55D040ED-443E-4167-BCA0-00F55329842A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55D040ED-443E-4167-BCA0-00F55329842A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF1D938-D98E-4AAA-8B66-B89F0821477B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF1D938-D98E-4AAA-8B66-B89F0821477B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF1D938-D98E-4AAA-8B66-B89F0821477B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF1D938-D98E-4AAA-8B66-B89F0821477B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCB9E539-D1B7-47AD-897D-6405EC8AA451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB9E539-D1B7-47AD-897D-6405EC8AA451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB9E539-D1B7-47AD-897D-6405EC8AA451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB9E539-D1B7-47AD-897D-6405EC8AA451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3234FEF0-5914-4A29-BA26-0EC44B731F13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3234FEF0-5914-4A29-BA26-0EC44B731F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3234FEF0-5914-4A29-BA26-0EC44B731F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3234FEF0-5914-4A29-BA26-0EC44B731F13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9C91E6-EA16-4386-B4D3-F53D2E492771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9C91E6-EA16-4386-B4D3-F53D2E492771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9C91E6-EA16-4386-B4D3-F53D2E492771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9C91E6-EA16-4386-B4D3-F53D2E492771}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D173CAD-24CD-4A43-A136-A25A5FB4F08F} = {8212EE44-D27F-48E2-AD9E-BB562AA01B7C}
+		{8609E7D3-B348-4736-B7B0-3CF6D6358A9A} = {E02ADFB3-6BD7-4421-9F69-476D22F33917}
+		{55D040ED-443E-4167-BCA0-00F55329842A} = {9C96F5F4-0ACA-4CAB-A98A-27B1C52ACEDE}
+		{7AF1D938-D98E-4AAA-8B66-B89F0821477B} = {86C8A471-22A8-4D14-BC3E-FA9612386D9F}
+		{FCB9E539-D1B7-47AD-897D-6405EC8AA451} = {86C8A471-22A8-4D14-BC3E-FA9612386D9F}
+		{3234FEF0-5914-4A29-BA26-0EC44B731F13} = {86C8A471-22A8-4D14-BC3E-FA9612386D9F}
+		{DD9C91E6-EA16-4386-B4D3-F53D2E492771} = {02F58C4A-EAC7-4C32-B023-FAF575E32551}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE23C15C-A775-4D27-80E4-EAB52CE39A96}
+	EndGlobalSection
+EndGlobal
