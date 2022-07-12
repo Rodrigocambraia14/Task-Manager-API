@@ -29,7 +29,9 @@ namespace LawTech.Application.Models.Commands.Users.Login
 
         public async Task<IContractResponse> Handle(LoginUserCommand command, CancellationToken cancellationToken)
         {
-            var user = await this.defaultContext.Users.FirstOrDefaultAsync(x => x.UserName == command.UserName, cancellationToken: cancellationToken);
+            var user = await this.defaultContext.Users
+                                 .Include(x => x.UserRoles)
+                                 .FirstOrDefaultAsync(x => x.UserName == command.UserName, cancellationToken: cancellationToken);
 
             if (user is null)
                 throw new Exception("Usuário não encontrado !");

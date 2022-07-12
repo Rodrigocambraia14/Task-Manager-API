@@ -5,10 +5,12 @@ using LawTech.Context.Default.Entities;
 using LawTech.Infra.Context.Persistence.Context.Default;
 using LawTech.Infra.Ioc;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using System.Globalization;
 using Task = System.Threading.Tasks.Task;
 
