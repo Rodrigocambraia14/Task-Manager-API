@@ -10,6 +10,6 @@ namespace LawTech.Application.Models.Commands.Tasks.Delete
 {
     public class DeleteTaskCommand : IRequest<IContractResponse>
     {
-        public List<Guid> Ids { get; set; }
+        public Guid Id { get; set; }
     }
 }

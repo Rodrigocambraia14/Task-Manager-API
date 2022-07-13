@@ -21,15 +21,15 @@ namespace LawTech.Application.Models.Commands.Tasks.Delete
 
         public async Task<IContractResponse> Handle(DeleteTaskCommand command, CancellationToken cancellationToken)
         {
-            var tasks = await this.defaultContext.Tasks.Where(x => command.Ids.Any(y => y == x.Id))
-                                                       .ToListAsync(cancellationToken: cancellationToken);
+            var task = await this.defaultContext.Tasks.Where(x => command.Id == x.Id)
+                                                       .FirstOrDefaultAsync(cancellationToken: cancellationToken);
 
-            if (tasks is null || tasks.Count == 0)
+            if (task is null)
                 throw new Exception("Nenhuma tarefa encontrada, por favor tente novamente !");
 
-            tasks.All(x => { x.Status = CrossCutting.Enums.TaskStatus.Deleted; return true; });
+            task.Status = CrossCutting.Enums.TaskStatus.Deleted;
 
-            this.defaultContext.Tasks.UpdateRange(tasks);
+            this.defaultContext.Tasks.Update(task);
 
             await this.defaultContext.SaveChangesAsync(cancellationToken: cancellationToken);
 
