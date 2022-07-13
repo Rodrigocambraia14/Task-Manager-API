@@ -18,8 +18,4 @@
     <ProjectReference Include="..\LawTech.Infra.Context.Persistence\LawTech.Infra.Context.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\Queries\Users\" />
-  </ItemGroup>
-
 </Project>
