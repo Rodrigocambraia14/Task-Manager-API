@@ -15,8 +15,6 @@ namespace LawTech.Context.Default.Entities
 
         public string Name { get; set; }
 
-        public string Password { get; set; }
-
         public string? ImageProfile { get; set; }
 
         public DateTime CreatedDate { get; set; }

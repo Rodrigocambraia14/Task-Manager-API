@@ -44,11 +44,10 @@ namespace ImpactaLawTech_Test.Seeds
                     Name = "admin",
                     Email = "teste_lawtech@gmail.com",
                     UserName = "admin",
-                    Password = "admin",
                     CreatedDate = DateTime.Now,
                 };
 
-                userManager.CreateAsync(user, "admin").GetAwaiter().GetResult();
+                var result = userManager.CreateAsync(user, "admin123").GetAwaiter().GetResult();
 
                 user = defaultContext.Users.Where(x => x.UserName == "admin").FirstOrDefaultAsync().GetAwaiter().GetResult();
 

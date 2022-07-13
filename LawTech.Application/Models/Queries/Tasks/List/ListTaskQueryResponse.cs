@@ -20,5 +20,7 @@ namespace LawTech.Application.Models.Queries.Tasks.List
         public TaskPriority Priority { get; set; }
 
         public Guid UserId { get; set; }
+
+        public DateTime CreatedDate { get; set; }
     }
 }

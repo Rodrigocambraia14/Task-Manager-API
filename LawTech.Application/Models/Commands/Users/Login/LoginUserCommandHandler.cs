@@ -43,8 +43,6 @@ namespace LawTech.Application.Models.Commands.Users.Login
                 var role = await this.defaultContext.Roles.Where(x => x.Id == user.UserRoles.First().RoleId)
                                                           .FirstOrDefaultAsync(cancellationToken: cancellationToken);
 
-                user.UserRoles.First().Role = role!;
-
                 UserLogin userLogin = new()
                 {
                     LoginProvider = "Default",
@@ -59,9 +57,21 @@ namespace LawTech.Application.Models.Commands.Users.Login
 
                 await this.defaultContext.SaveChangesAsync(cancellationToken);
 
-                user.UserLogins.Add(userLogin);
+                LoginUserCommandResponse userResponse = new()
+                {
+                    Id = user.Id,
+                    CreatedDate = user.CreatedDate,
+                    Email = user.Email,
+                    Name = user.Name,
+                    ImageProfile = user.ImageProfile,
+                    UserName = user.UserName,
+                    RoleId = role.Id,
+                    RoleName = role.Name,
+                    Token = userLogin.Token,
+                    ExpirationDate = userLogin.ExpirationDate
+                };
 
-                return ContractResponse.ValidContractResponse(string.Empty, user);
+                return ContractResponse.ValidContractResponse(string.Empty, userResponse);
             }
             else
                 throw new Exception("Login ou senha incorretos !");

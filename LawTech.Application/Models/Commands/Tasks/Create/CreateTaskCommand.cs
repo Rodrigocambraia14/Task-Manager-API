@@ -16,7 +16,7 @@ namespace LawTech.Application.Models.Commands.Tasks.Create
 
         public string Description { get; set; }
 
-        public TaskStatus Status { get; set; }
+        public TaskStatus Status { get; set; } = TaskStatus.Ready;
 
         public TaskPriority Priority { get; set; }
 

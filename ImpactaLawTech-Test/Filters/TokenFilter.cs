@@ -1,4 +1,5 @@
-﻿using LawTech.CrossCutting.Helper;
+﻿using ImpactaLawTech_Test.CustomAttributes;
+using LawTech.CrossCutting.Helper;
 using LawTech.Infra.Context.Persistence.Context.Default;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,12 +8,12 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace ImpactaLawTech_Test.Filters
 {
-    public class AuthFilter : ActionFilterAttribute
+    public class TokenFilter : ActionFilterAttribute
     {
         private readonly IDefaultContext defaultContext;
         private readonly IConfiguration config;
 
-        public AuthFilter(IDefaultContext defaultContext,
+        public TokenFilter(IDefaultContext defaultContext,
                           IConfiguration config)
         {
             this.defaultContext = defaultContext;
@@ -24,9 +25,9 @@ namespace ImpactaLawTech_Test.Filters
             var descriptor = (ControllerActionDescriptor)context.ActionDescriptor;
             var attributes = descriptor.MethodInfo.CustomAttributes;
 
-            if (attributes.All(a => a.AttributeType != typeof(AllowAnonymousAttribute)))
+            if (attributes.Any(a => a.AttributeType == typeof(TokenAttribute)))
             {
-                var token = context.HttpContext.Request.Headers["Authorization"].ToString().Replace("Bearer ", string.Empty);
+                var token = context.HttpContext.Request.Headers["Token"].ToString().Replace("Bearer ", string.Empty);
 
                 var userLogin = this.defaultContext.UserLogins.FirstOrDefault(x => x.Token == token);
 

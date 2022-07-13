@@ -31,7 +31,7 @@ namespace LawTech.Application.Models.Commands.Tasks.Update
             if (task is null)
                 throw new Exception("Tarefa não encontrada !");
 
-            _ = this.mapper.Map<Context.Default.Entities.Task>(command,
+            _ = this.mapper.Map(command, task,
                    opt => opt.AfterMap((src, dest) =>
                    {
                        dest.UpdatedBy = command.UserId;

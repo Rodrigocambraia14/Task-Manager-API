@@ -30,11 +30,6 @@ namespace LawTech.Context.Default.Mappings
                   .HasColumnType("nvarchar")
                   .HasMaxLength(500);
 
-            builder.Property(e => e.Password)
-                   .HasColumnType("nvarchar")
-                   .HasMaxLength(100)
-                   .IsRequired();
-
             builder.Property(e => e.Name)
                    .HasColumnType("nvarchar")
                    .HasMaxLength(200)
