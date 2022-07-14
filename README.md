@@ -10,5 +10,8 @@ Projeto WebAPI
 - Aplicação SOLID + DDD
 - Swagger
 - FluentValidation
+- JWT Token
+- Middlewares de erros
+- Filtro de requisição via token para acesso às APIs RESTFull
 
 Um Task Manager com criação de usuário, login, controle de permissões, controle de sessão e sistema administrativo.
