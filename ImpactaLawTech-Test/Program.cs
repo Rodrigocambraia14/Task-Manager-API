@@ -1,4 +1,6 @@
+using FluentValidation;
 using ImpactaLawTech_Test.Filters;
+using ImpactaLawTech_Test.Middlewares;
 using ImpactaLawTech_Test.Seeds;
 using LawTech.Application.Models.Commands.Users;
 using LawTech.Application.Models.Commands.Users.Login;
@@ -46,6 +48,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddAutoMapper(typeof(UserCommandProfile));
 builder.Services.AddMediatR(typeof(LoginUserCommand).Assembly);
+builder.Services.AddValidatorsFromAssembly(typeof(LoginUserCommandValidator).Assembly);
 
 
 
@@ -76,6 +79,8 @@ builder.Services.AddSwaggerGen(c =>
     c.OperationFilter<TokenHeaderParameter>();
 
 });
+
+builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidation<,>));
 
 async Task<IApplicationBuilder> LoadSeeds(IApplicationBuilder app)
 {
@@ -116,6 +121,7 @@ app.UseRequestLocalization(new RequestLocalizationOptions
 });
 
 app.UseCors("All");
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 

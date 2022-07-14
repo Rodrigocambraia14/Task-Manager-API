@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
+using ValidationException = LawTech.CrossCutting.Helper.ValidationException;
 
 namespace ImpactaLawTech_Test.Middlewares
 {

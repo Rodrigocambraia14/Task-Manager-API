@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace LawTech.Application.Models.Commands.Users.Register
 {
-    internal class RegisterUserCommandValidator
+    public class RegisterUserCommandValidator : AbstractValidator<RegisterUserCommand>
     {
+        public RegisterUserCommandValidator()
+        {
+        }
     }
 }

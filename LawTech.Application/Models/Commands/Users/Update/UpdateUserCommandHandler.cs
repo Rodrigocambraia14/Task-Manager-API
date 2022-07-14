@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using LawTech.Context.Default.Entities;
 using LawTech.CrossCutting.Helper;
 using LawTech.Infra.Context.Persistence.Context.Default;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,12 +16,15 @@ namespace LawTech.Application.Models.Commands.Users.Update
     public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, IContractResponse>
     {
         private readonly IDefaultContext defaultContext;
+        private readonly UserManager<User> userManager;
         private readonly IMapper mapper;
 
         public UpdateUserCommandHandler(IDefaultContext defaultContext,
+                                        UserManager<User> userManager,
                                         IMapper mapper)
         {
             this.defaultContext = defaultContext;
+            this.userManager = userManager;
             this.mapper = mapper;
         }
 

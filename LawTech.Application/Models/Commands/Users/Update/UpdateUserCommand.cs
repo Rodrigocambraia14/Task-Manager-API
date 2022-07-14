@@ -13,12 +13,10 @@ namespace LawTech.Application.Models.Commands.Users.Update
     {
         public Guid UserId { get; set; }
 
-        public Guid RequesterId { get; set; }
-
         public string Name { get; set; }
 
         public string Email { get; set; }
 
-        public UserStatus Status { get; set; }
+        public UserStatus Status { get; set; } = UserStatus.Active;
     }
 }

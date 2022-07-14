@@ -27,7 +27,7 @@ namespace LawTech.Application.Models.Queries.Users.Get
         public async Task<IContractResponse> Handle(GetUserQuery query, CancellationToken cancellationToken)
         {
             var user = await this.defaultContext.Users
-                                 .Where(x => x.Id == query.Id)
+                                 .Where(x => x.Id == query.UserId)
                                  .ProjectTo<GetUserQueryResponse>(this.mapper.ConfigurationProvider)
                                  .FirstOrDefaultAsync(cancellationToken: cancellationToken);
 

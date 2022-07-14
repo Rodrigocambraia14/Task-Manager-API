@@ -10,6 +10,6 @@ namespace LawTech.Application.Models.Queries.Users.Get
 {
     public class GetUserQuery : IRequest<IContractResponse>
     {
-        public Guid Id { get; set; }
+        public Guid UserId { get; set; }
     }
 }

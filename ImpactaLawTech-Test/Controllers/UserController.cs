@@ -1,4 +1,5 @@
 ﻿using ImpactaLawTech_Test.CustomAttributes;
+using LawTech.Application.Models.Commands.Users.ChangePassword;
 using LawTech.Application.Models.Commands.Users.Delete;
 using LawTech.Application.Models.Commands.Users.Login;
 using LawTech.Application.Models.Commands.Users.Register;
@@ -41,6 +42,13 @@ namespace ImpactaLawTech_Test.Controllers
         [Token]
         [HttpPut("update")]
         public async Task<IActionResult> Update([FromBody] UpdateUserCommand command)
+        {
+            return Ok(await this.mediator.Send(command));
+        }
+
+        [Token]
+        [HttpPut("change-password")]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordUserCommand command)
         {
             return Ok(await this.mediator.Send(command));
         }
