@@ -29,6 +29,7 @@ namespace LawTech.Application.Models.Queries.Tasks.List
             var tasks = await this.defaultContext.Tasks.WhereIf(query.UserId is not null, x => x.UserId == query.UserId &&
                                                                                           x.Status != CrossCutting.Enums.TaskStatus.Deleted)
                                                        .ProjectTo<ListTaskQueryResponse>(this.mapper.ConfigurationProvider)
+                                                       .OrderBy(x => x.Priority).ThenByDescending(x => x.CreatedDate)
                                                        .ToListAsync(cancellationToken: cancellationToken);
 
             return ContractResponse.ValidContractResponse(string.Empty, tasks);
