@@ -1,4 +1,5 @@
 ﻿using LawTech.Context.Default.Entities;
+using LawTech.CrossCutting.Enums;
 using LawTech.CrossCutting.Helper;
 using LawTech.Infra.Context.Persistence.Context.Default;
 using MediatR;
@@ -35,6 +36,9 @@ namespace LawTech.Application.Models.Commands.Users.Login
 
             if (user is null)
                 throw new Exception("Usuário não encontrado !");
+
+            if (user.Status == UserStatus.Blocked)
+                throw new Exception("Usuário bloqueado, contate a Administração para mais informações.");
 
             var login = await this.signInManager.PasswordSignInAsync(user, command.Password, false, false);
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using LawTech.CrossCutting.Enums;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace LawTech.Context.Default.Entities
         public string? ImageProfile { get; set; }
 
         public DateTime CreatedDate { get; set; }
+
+        public UserStatus Status { get; set; }
 
         public ICollection<UserRole> UserRoles { get; set; }
 

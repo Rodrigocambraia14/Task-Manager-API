@@ -1,4 +1,5 @@
 ﻿using LawTech.Context.Default.Entities;
+using LawTech.CrossCutting.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.ValueGeneration;
@@ -43,6 +44,15 @@ namespace LawTech.Context.Default.Mappings
             builder.Property(e => e.CreatedDate)
                    .HasColumnType("datetime")
                    .IsRequired();
+
+            builder.Property(e => e.Status)
+                  .HasMaxLength(20)
+                  .IsRequired()
+                  .HasColumnType("varchar")
+                  .HasDefaultValue(UserStatus.Active)
+                  .HasConversion(
+                      v => v.ToString(),
+                      v => (UserStatus)Enum.Parse(typeof(UserStatus), v));
 
             builder.HasMany(e => e.UserRoles)
                    .WithOne(e => e.User)

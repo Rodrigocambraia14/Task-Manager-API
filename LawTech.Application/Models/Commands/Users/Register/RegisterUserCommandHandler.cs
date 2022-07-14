@@ -42,6 +42,7 @@ namespace LawTech.Application.Models.Commands.Users.Register
                     opt => opt.AfterMap((src, dest) =>
                     {
                         dest.CreatedDate = DateTime.Now;
+                        dest.Status = UserStatus.Active;
                         dest.UserName = command.UserName;
                         dest.Email = command.Email;
                         dest.NormalizedEmail = command.Email.ToUpper();

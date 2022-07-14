@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LawTech.Application.Models.Queries.Tasks.List
+namespace LawTech.Application.Models.Commands.Users.Delete
 {
-    public class ListTaskQuery : IRequest<IContractResponse>
+    public class DeleteUserCommand : IRequest<IContractResponse>
     {
-        public Guid? UserId { get; set; }
+        public Guid UserId { get; set; }
     }
 }

@@ -27,8 +27,9 @@ namespace LawTech.Application.Models.Queries.Users.Get
         public async Task<IContractResponse> Handle(GetUserQuery query, CancellationToken cancellationToken)
         {
             var user = await this.defaultContext.Users
+                                 .Where(x => x.Id == query.Id)
                                  .ProjectTo<GetUserQueryResponse>(this.mapper.ConfigurationProvider)
-                                 .FirstOrDefaultAsync(x => x.Id == query.Id);
+                                 .FirstOrDefaultAsync(cancellationToken: cancellationToken);
 
             if (user is null)
                 throw new Exception("Usuário não encontrado !");

@@ -18,31 +18,18 @@ namespace LawTech.Application.Models.Queries.Users.Get
 
         public DateTime CreatedDate { get; set; }
 
-        public List<GetUserRoleResponse> UserRoles { get; set; }
-
         public ICollection<GetUserLoginResponse> UserLogins { get; set; }
 
-        public ICollection<TaskResponse> Tasks { get; set; }
+        public ICollection<GetUserTaskResponse> Tasks { get; set; }
     }
 
-    public sealed class GetUserRoleResponse
-    {
-        public GetRoleResponse Role { get; set; }
-    }
-
-    public sealed class GetRoleResponse
-    {
-        public string Name { get; set; }
-
-        public string Description { get; set; }
-    }
 
     public sealed class GetUserLoginResponse
     {
         public DateTime CreatedDate { get; set; }
     }
 
-    public sealed class GetTaskResponse
+    public sealed class GetUserTaskResponse
     {
         public Guid Id { get; set; }
     }
