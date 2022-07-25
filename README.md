@@ -14,4 +14,4 @@ Projeto WebAPI
 - Middlewares de erros
 - Filtro de requisição via token para acesso às APIs RESTFull
 
-Um Task Manager com criação de usuário, login, controle de permissões, controle de sessão e sistema administrativo.
+Um Task Manager com criação de usuário, login, controle de permissões, controle de sessão, controle de tarefas (criação, inspeção, exclusão, edição, visualização detalhada) e sistema administrativo.
